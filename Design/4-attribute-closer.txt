@@ -1,0 +1,63 @@
+Attribute closure/Closure set  -
+
+X^+ - Attribute closure convention 
+Contains the set of attributes determined by X
+X is set of attributes
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+R(A, B, C, D, E)
+FD: { A -> B, B -> C, C -> D, D -> E }
+
+----------------------------------------------------------------------------
+
+Closure of A -
+A -> A   (Reflexivity)
+A -> B   
+A -> C   (Transitive)
+A -> D   (Transitive)
+A -> E   (Transitive)
+A^+ = { A, B, C, D, E }
+
+Closure of B -
+B -> B   (Reflexivity)
+B -> C   
+B -> D   (Transitive)
+B -> E   (Transitive)
+B^+ = { B, C, D, E }
+
+Closure of C -
+C -> C   (Reflexivity)
+C -> D   
+C -> E   (Transitive)
+C^+ = { C, D, E }
+
+Closure of D -
+D -> D   (Reflexivity)
+D -> E   
+D^+ = { D, E }
+
+Closure of E -
+E -> E   (Reflexivity)
+E^+ = { E }
+
+----------------------------------------------------------------------------
+
+Closure of AD -
+
+AD -> BD   (Augumentation)
+AD -> CD   (Augumentation)
+AD -> AD   (Augumentation) (Reflexivity)
+AD -> ED   (Augumentation)
+
+AD -> A    (Decomposition)
+AD -> B    (Decomposition)
+AD -> C    (Decomposition)
+AD -> D    (Decomposition)
+AD -> E    (Decomposition)
+
+AD^+ = { A, B, C, D, E }
+
+----------------------------------------------------------------------------
+
+Super key   -  set of attributes whose closure contains all the attributes in the relation.

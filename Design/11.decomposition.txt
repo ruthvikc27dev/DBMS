@@ -1,0 +1,5 @@
+Decomposition of a relation should be 
+    - Dependency preserving
+    - Loss less join
+
+    

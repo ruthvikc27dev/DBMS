@@ -1,0 +1,99 @@
+Functional dependency -
+
+X -> Y
+X determines Y
+X - Determinant
+Y - Dependent
+
+If records contains multiple entries with the same value in the X attribute, then all the
+values in the Y attribute should be same for the X. 
+or
+No multiple records with the same X
+X       Y
+1       0
+2       1      # Entry with multiple records 
+3       9
+4       7
+2       1      # Okay
+2       2      # Not okay
+
+X     - X column
+Y     - Y column
+n, m  - rownum
+For Functional dependency, the following condition must be satisfied
+if Xn == Xm, then
+    must be Yn == Ym
+
+Students Table -
+
+R.no         Name         Marks           Dept        Course
+
+1            a             78              CS           C1
+2            b             60              EE           C1
+3            a             78              CS           C2
+4            b             60              EE           C3
+5            c             80              IT           C3
+6            d             80              EC           C2
+
+----------------------------------------------------------------------------
+Single determinant and dependent -
+
+R.no   ->    Name         ( functional dependent )
+R.no   ->    Marks        ( functional dependent )
+R.no   ->    Dept         ( functional dependent )
+R.no   ->    Course       ( functional dependent )
+                          
+Name   ->    R.no         ( not functional dependent )
+Name   ->    Marks        ( functional dependent )
+Name   ->    Dept         ( functional dependent )
+Name   ->    Course       ( not functional dependent )
+                          
+Marks  ->    R.no         ( not functional dependent )
+Marks  ->    Name         ( not functional dependent )
+Marks  ->    Dept         ( not functional dependent )
+Marks  ->    Course       ( not functional dependent )
+                          
+Dept   ->    R.no         ( not functional dependent )
+Dept   ->    Name         ( functional dependent )
+Dept   ->    Marks        ( functional dependent )
+Dept   ->    Course       ( not functional dependent )
+                          
+Course ->    R.no         ( not functional dependent )
+Course ->    Name         ( not functional dependent )
+Course ->    Marks        ( not functional dependent )
+Course ->    Dept         ( not functional dependent )
+ 
+----------------------------------------------------------------------------
+Multiple determinants and multiple dependencies -
+For example -
+X, Y -> U, V
+
+R.no, Name   -> Marks          ( functional dependent )
+Name, Marks  -> Dept           ( functional dependent )
+
+Name, Marks  -> Dept, Course   ( not functional dependent )
+
+----------------------------------------------------------------------------
+
+# Program which prints all possible Functional dependency structure.
+
+string attributes = {"R.no", "Name", "Marks", "Dept", "Course"};
+int length=sizeof(arr)/sizeof(string) - 1;
+
+string arr[length][length]
+int i, j;
+for(i=0; i<length; i++){
+
+    for(j=0; j<length; j++){
+
+        if(i == j){
+            arr[i][j] = 0;
+            continue;
+        }
+
+        arr[i][j] = attributes[j]; 
+    }
+
+}
+
+----------------------------------------------------------------------------

@@ -1,0 +1,29 @@
+A relation is in BCNF if
+    - It is in 3rd Normal form.
+    - For each non-trivial FD X->Y, X must be super key.
+
+Ex 1 -
+R(A, B, C)
+FD - {A->B, B->C, C->A}
+
+ABC+ = {A, B, C} (SK)
+AC+  = {A, B, C} (SK)
+A+   = {A, B, C} (CK)
+C+   = {A, B, C} (CK)
+B+   = {A, B, C} (CK)
+
+Checking FD
+A->B (A is a super key)
+B->C (B is a super key)
+C->A (C is a super key)
+
+So, the relation is in BCNF form.
+
+Ex 2 -
+R(A, B, C, D, E)
+FD - {A->BCDE, BC->ACE, D->E}
+
+
+Ex 3 -
+R(A, B, C, D, E)
+FD - {AB->CDE, D->A}

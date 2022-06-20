@@ -1,0 +1,126 @@
+Types of functional dependencies -
+1. Trivial
+2. Non-trivial
+3. Multi-valued
+4. Transitive
+
+----------------------------------------------------------------------------
+
+Example table -
+Class:      
+        Roll no.       Name         Marks        Dep 
+
+----------------------------------------------------------------------------
+
+Trivial functional dependency -
+FD: X -> Y
+    if Y is subset of X, then it is trivial functional dependency.
+
+example -
+
+Roll no.       ->   Roll no.
+Roll no., Name ->   Name
+
+These trivial functional dependencies are always valid, no need to check the table.
+
+----------------------------------------------------------------------------
+
+Non-trivial -
+
+valid or not will be checked for Non-trivial functional dependencies
+
+FD: X  ->  Y
+    if X interjection Y is NULL, then it is a Non-trivial functional dependency 
+
+Roll no.       ->   Name ? need to check
+Roll no., Name ->   Marks ? need to check
+
+----------------------------------------------------------------------------
+
+Semi-trivial -
+
+FD: X -> Y
+    if Y is not subset of X, then it is a Semi-trivial functional dependency
+
+Roll no., Name   ->  Name, Marks
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
+Armstrong's axioms/Inference rules -
+
+Students Table -
+
+R.no         Name         Marks           Dept        Course
+
+1            a             78              CS           C1
+2            b             60              EE           C1
+3            a             78              CS           C2
+4            b             60              EE           C3
+5            c             80              IT           C3
+6            d             80              EC           C2
+
+Primary rules -
+1. Reflexivity
+2. Transitivity
+3. Augumentation
+
+Secondary rules -
+1. Union
+2. Decomposing/Splitting
+3. Pseudo Transitivity
+4. Composition
+
+X, Y - set of one or more attributes
+
+----------------------------------------------------------------------------
+
+Reflexivity - Any following condition is true
+X  ->  X 
+    ||
+X  ->  Y, Y is subset of X
+
+----------------------------------------------------------------------------
+
+Transitivity -
+if( X  ->  Y && Y  ->  Z) then,
+    X  -> Z
+
+----------------------------------------------------------------------------
+
+Augumentation (To make something big) -
+
+A - one or more attributes
+
+if( X -> Y ) then,
+    XA -> YA
+
+----------------------------------------------------------------------------
+
+Union -
+
+if (X  ->  Y && X  ->  Z ) then,
+    X  ->  YZ
+
+----------------------------------------------------------------------------
+
+Decomposition/Splitting -
+
+if X  ->  YZ then,
+    X  ->  Y
+    X  ->  Z
+
+----------------------------------------------------------------------------
+
+Pseudo Transitivity -
+
+if X   ->  Y   &&  YZ  ->  A, then XZ  -> A
+
+----------------------------------------------------------------------------
+
+Composition -
+
+if X   ->  A   &&  Y  ->  B, then
+    XY  -> AB
+
+----------------------------------------------------------------------------

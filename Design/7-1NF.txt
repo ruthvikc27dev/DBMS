@@ -1,0 +1,17 @@
+
+1st Normal Form -
+
+- Each attribute should contain atomic values. 
+    - A atomic value is value that cannot be further decomposed.
+    - If a value is composite, create extra columns for each extra value. 
+    - If a value is multivalued, then 
+        - Create extra rows for each extra value.
+        - Create a separate table for multivalued attributes & create forign key from original table.
+        - Create multiple columns for each multi value. For example - Phno. Phno1, Phno2 ... PhnoN  (Not a good way)
+- A column should always contain values of same domain.
+- Columns should have unique names.
+- No ordering to rows & columns.
+- No duplicate rows.
+
+
+* If relational schema is not in first normal form then ER diagram or DB design is not good.

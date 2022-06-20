@@ -1,0 +1,66 @@
+
+X^+       -     contains set of attributes determined by X
+
+----------------------------------------------------------------------------
+
+Q) Find all the candidate keys of a relation (case: only 1 CK is present)
+R(A, B, C, D, E)
+FD  -  { A->B, D->E }
+
+Step 1 - Take all the attributes
+ABCDE^+  -  { A, B, C, D, E } 
+
+Step 2 - Remove the dependents one by one
+ACDE^+   -  { A, B, C, D, E}
+ACD^+    -  { A, B, C, D, E}
+
+ACD's proper subset - { A, C, D, AC, AD, CD }
+None of these can determine all other, so ACD can be candidate key
+
+ACD (candidate key)
+{ A, C, D } are prime attributes
+{ B, E } are non prime attributes
+
+Step 3 - Checking whether a relation has more than 1 candidate keys
+
+condition -
+Check each prime attribute present in set of dependents in FD.
+or
+Non-prime attributes set is equal to dependents set in FD
+
+prime attributes = { A, B, C }
+dependents in FD = { B, E }
+
+non prime attributes = { B, E }
+dependents in FD = { B, E }
+
+if step 3 is satisfied, then only 1 candidate key is present.
+In this case, it is ACD 
+
+----------------------------------------------------------------------------
+
+Q) Find all the candidate keys of a relation (case: more than 1 CK is present)
+R(A, B, C, D)
+FD: { A->B, B->C, C->A}
+
+ABCD^+    -    { A, B, C, D }
+ACD^+     -    { A, B, C, D }
+ABD^+     -    { A, B, C, D }
+BCD^+     -    { A, B, C, D }
+
+CK's -
+AD^+      -    { A, B, C, D }
+BD^+      -    { A, B, C, D }
+CD^+      -    { A, B, C, D }
+prime attributes    - { A, B, C, D }
+dependent set of FD - { B, C, A }
+
+----------------------------------------------------------------------------
+
+Practice Question -
+
+R(A, B, C, D)
+FD - { AB->CD, D->B, C-> A }
+No of CK's?
+
+----------------------------------------------------------------------------

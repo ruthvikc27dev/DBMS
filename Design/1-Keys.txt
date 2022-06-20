@@ -1,0 +1,76 @@
+
+Students Table (rows/records/tuples) (columns/attributes) -
+
+R.no         Name         Marks           Dept        Course
+
+1            a             78              CS           C1
+2            b             60              EE           C1
+3            a             78              CS           C2
+4            b             60              EE           C3
+5            c             80              IT           C3
+
+----------------------------------------------------------------------------
+
+Key                  - It is a attribute or attributes which contains unique values, which help in identifying records uniquely.
+Super key            - Key or super key, both are interchangabely used.
+                     - Maximum number of super keys possible 
+                       Suppose a table contains 5 attributes
+                       so, 5C1 + 5C2 + 5C3 + 5C4 + 5C5
+                       nCr = n!/(r! (n - r)!)
+                       or
+                       (2^n) - 1
+
+----------------------------------------------------------------------------
+
+subset              -  S1 = {1, 2, 3}, S2 = {1, 2, 3}
+                       S1 is subset of S2, if all the members in S1 are in S2 and also all the S2 members are in S1
+proper subset       -  S1 = {1, 2}, S2 = {1, 2, 3}
+                       S1 is proper subset of S2, if all the members in S1 are in S2 and not all S2 members in S1
+
+
+Candidate key       - For Candidate key selection, the selection attribute or attributes must be super key 
+                    - is a key whose proper subset is not a key or super key
+                    - minimal subset of a super key which can uniquely identify an entity from an entity set.
+                    - minimal - as minimum as possible
+
+Simple key          - If there is only attribute in the candidate key then it is Simple key
+
+Composite key       - If there are multiple attributes in the candidate key then it is Composite key
+    
+----------------------------------------------------------------------------
+
+Primary key         - Choosing any one key from the set of Candidate keys.
+                    - The chosen key must not contain any NULL values.
+
+----------------------------------------------------------------------------
+
+Alternate key       - The remaining keys in the set of Candidate key after choosing Primary key are Alternate keys. 
+
+----------------------------------------------------------------------------
+
+Q) Find the number of super keys by considering the following information -
+    R(A, B, C), CK - A
+
+    A, AB, AC, ABC
+    4 Super keys
+
+----------------------------------------------------------------------------
+
+Q) Find the number of super keys by considering the following information -
+    R(A, B, C), CK - AC
+
+    AC, ACB
+    2 Super keys
+
+----------------------------------------------------------------------------
+
+Q) Find the number of super keys by considering the following information -
+    R(A, B, C, D), CK - {A, D}
+
+    A, AB, AC, AD, ABC, ACD, ABCD
+    D, DB, DC, DAB, DBC
+
+    12 Super keys
+
+
+----------------------------------------------------------------------------

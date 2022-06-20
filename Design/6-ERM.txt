@@ -1,0 +1,63 @@
+
+
+What is an Entity Relationship Diagram?
+- An Entity-Relationship Diagram describes the Relationship of entities that need to be stored in a database
+- ER Diagram is mainly a structual design for the database. It is a framework using specialized symbols to define the relationship between entities.
+- ER Diagram is created based on three main components entities, attributes, and relationships.
+
+Why use Entity Relationship Diagram?
+- Helps us conceptualize the database and help us know which fields need to be embedded for a particular entity.
+- ER Diagram gives a better understanding of the information to be stored in a database.
+- Reduces complexity and saves time whoch allows you to build databases quickly.
+- Helps to describe elements using ER Model.
+
+Symbols used in ER Diagram -
+- Rectangle                         -    Entity
+- Rectangle embedded in Rectangle   -    Weak Entity
+- Oval (text underlined)            -    Key attribute
+- Oval                              -    Attribute
+- Dotted oval                       -    Derived attribute
+- Oval embedded in oval             -    Multivalued attribute
+- Diamond                           -    Relationship
+
+Components in ER Diagram -
+- Entity
+    - Weak entity
+- Attribute
+    - Key
+    - Composite
+    - Multivalued
+    - Derived
+- Relationship
+    - One to One
+    - One to Many
+    - Many to One
+    - Many to Many
+
+Entity
+    - An entity can be either living or non living component
+    - An entity is showcased as a rectangle in an ER diagram.
+
+Weak entity 
+    - In a relational database, a weak entity is an entity that cannot be uniquely identified by its attributes alone; therefore, it must use a foreign key in conjunction with its attributes to create a primary key.    
+
+Attribute 
+    - An attribute describes the property of an entity.
+    - An attribute is represented as Oval in an ER diagram.
+
+Key attribute 
+    - Key attribute uniquely identifies an entity from an entity set.
+    - The text of key attribute is underlined.
+
+Composite attribute
+    - An attribute that is composed of other attributes is known as composite attribute.
+    - The composite attribute is represented with an oval, and that attribute is further connected with other ovals.
+
+Multivalued attribute 
+    - An attribute that can possess more than one value, such attributes are called Multivalued attributes.
+    - The double oval is used to represent a Multivalued attribute.
+
+Derived attribute 
+    - An attribute that can be extracted from other attributes of the entity is known as Derived attribute.
+    - In ER diagram, Derived attribute is represented by dashed oval.
+

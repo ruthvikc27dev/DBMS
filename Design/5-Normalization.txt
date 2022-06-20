@@ -1,0 +1,78 @@
+ 
+
+- Redundancy is the root cause for all the problems.
+    Like consistency, insertion, deletion, updation etc.
+- Reducing it will remove most of the problems.
+
+Anamolies
+- Insertion Anamoly
+- Updation Anamoly
+- Deletion Anamoly
+
+Solution for the above problems is "Normalization"
+
+Student table - (With Anamolies)
+
+sid       sname          credits    dept_name      building    roomno
+1         Rahul          5          CSE             B1         101
+2         Jiya           8          CSE             B1         101
+3         Jenny          9          Fashion         B2         201
+4         Payal          9          Fashion         B2         201
+5         Ankur          7          Civil           B1         110
+6         Vanshika       8          Civil           B1         110          
+
+- Insertion Anamoly
+    - Cannot insert only dept_name, building, and roomno. (Considering sid, sname, credits cannot contain null)
+- Updation Anamoly
+    - if we want to update roomno for CSE dept, it should be updated to all the records.
+- Deletion Anamoly
+    - Necessary information will also be deleted. Want to delete record with sid 1, here the useful information of dept will also be deleted.
+
+Decomposing table to reduce Anamolies
+
+Student table                                      |            Dept table
+                                     FK            |            PK
+sid        sname       credit        dept_name     |            deptname      building       roomno
+1          Rahul       5             CSE           |            CSE           B1             101
+3          Jenny       8             Fashion       |            Fashion       B2             201
+6          Vanshika    8             Civil         |            Civil         B1             110
+
+
+Systems 
+- OLTP (Online transactional processing) - Day to day queries or frequent queries
+- OLAP (Online Analytical processing)    - for huge data (uses complex queries to join tables to get result and also to get good performance)
+
+Benefits -
+- To reduce redundancy
+- To save space
+- To remove anamolies
+- reduces NULL values
+- Simplies the queries
+- Simplies the understanding of the database design 
+- Performance
+- Can easily add indexes
+
+Normal forms -
+1NF, 2NF, 3NF, BCNF, 4NF, 5NF, 6NF
+
+Summary -
+
+1NF: 
+Each attribute should contain atomic values
+A column should contai value from the same domain 
+Each column should have unique name 
+No ordering to rows and columns.
+No duplicate rows.
+
+2NF: 
+It must be 1NF 
+No Patial dependency in the relation (Partial dependency occurs when the left hand side of a candidate key points non-prime attributes)
+
+3NF:
+It is in 2NF 
+No transitive dependency for non-prime attributes 
+(To be non transitive and 3NF atleast one of these must be true: Either the left handside of funtional dependency is superkey or the right handside points to a prime attribute)
+
+BCNF: 
+A relation is BCNF if it is 3NF 
+For each functional dependency there must be a super key

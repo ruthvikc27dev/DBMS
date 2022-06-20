@@ -1,0 +1,66 @@
+
+Tranitive dependency -
+Non prime attribute -> Non prime attribute
+
+A Relation is in 3rd Normal form, if
+- it is in 2nd Normal form
+- there is no tranitive dependency
+
+
+For non-prime attributes -
+A table is in 3NF if and only if for each of its non-trivial functional
+dependency at least one of the following conditions holds -
+- LHS is Super key
+- RHS is prime attribute
+
+
+Ex 1 -
+R(A, B, C, D)
+FD - (A->B, B->C, C->D)
+
+ABCD+ = {A, B, C, D}
+B, C, D can be discarded (Tranitivity rule)
+
+A+ = { A, B, C, D }
+
+Proper subset of A is "fi"
+
+"A" is not on the right side of functional dependencies,
+so one candidate is only possible
+
+B (NPA) -> C (NPA)  
+C (NPA) -> D (NPA) 
+So, Tranitive dependency exists.
+Relation is not in 3rd normal form
+
+Ex 2 -
+R(A, B, C, D, E, F)
+FD - {AB-> CDEF, BD->F}
+
+ABCDEF+ = {A, B, C, D, E, F}
+C, D, E, F can be discarded
+
+AB+ = {A, B, C, D, E, F}
+
+Proper subset of AB cannot determine all other attributes
+
+No AB on the right sides
+
+So only one CK is possible
+
+Check for tranitive dependency.
+AB -> CDEF (OK)
+BD -> F    (Voilating) BD is considered as NPA
+
+
+If database in 3rd normal form, then it is a good database design and adequate
+
+Ex 3 -
+
+R(A, B, C, D, E)
+FD = { A->B, B->C, C->D, D->A }
+
+
+
+
+

@@ -1,0 +1,17 @@
+Canonical cover/Minimal cover/Irreducible set of FDs.
+
+F is a FD
+F| is Canonical cover of F, if F| don't have
+- Extraneous attribute/redundant attribute
+- redundant FD
+
+Steps -
+- Splitting rule so that in every FD right hand side has single attribute
+- Remove Extraneous attribute
+- Remove redundant FD
+
+(Solution can be unique)
+
+Ex 1 -
+
+F:- {AB->C, C->AB, B->C, ABC->AC, A->C, AC->B}

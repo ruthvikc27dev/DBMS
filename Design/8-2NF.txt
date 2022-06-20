@@ -1,0 +1,57 @@
+
+- Partial dependency 
+    1. Proper subset of CK -> Non prime attribute
+    2. Prime attribute -> Non prime attribute
+
+A relational table is in 2nd Normal form -
+    - It is in 1NF
+    - No partial dependency in the relation
+
+Ex 1 - 
+R(A, B, C, D, E, F)
+FD = { A->B, B->C, C->D, D->E }
+
+ABCDEF+ = { A, B, C, D, E }
+B, C, D, E can be discarded. (Transitivity rule)
+
+AF is a candidate key.
+
+Proper subset = {A, F}
+
+F is not determining any other attribute
+
+A is determining B which is partial dependency.
+
+Ex 2 -
+R(A, B, C, D)
+FD = { AB->CD, C->A, D->B }
+
+Ex 3 -
+R(A, B, C, D)
+FD = { A->B, B->C, C->D }
+
+ABCD+ = {A, B, C, D}
+B, C, D can be discarded (Transitivity rule)
+
+A+ = { A, B, C, D }
+
+A is a super key & candidate key
+
+Proper subset of A is "fi"
+
+So there is no partial dependency in this relation
+
+Ex 4 -
+R(A, B, C, D)
+FD = { A->B, B->D }
+
+ABCD+ = { A, B, C, D}
+B, D can be discarded (Transitivity rule)
+
+AC+ { A, B, C, D }
+
+Proper subset AC is {A, C}
+
+A->B which is non prime attribute.
+
+So, partial dependency exists in this relation.
