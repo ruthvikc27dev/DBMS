@@ -52,3 +52,6 @@ Atomicity	Transaction Manager
 Consistency	Application programmer
 Isolation	Concurrency Control Manager
 Durability	Recovery Manager
+
+
+Ref - https://www.geeksforgeeks.org/acid-properties-in-dbms/
