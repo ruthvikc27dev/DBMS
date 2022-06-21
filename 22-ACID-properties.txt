@@ -1,7 +1,9 @@
 ACID properties of transaction -
 
-Atomicity:
--  Either all the operations of the transaction must executed or none.
+Atomicity
+- All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are.
+- For example, in an application that transfers funds from one account to another, the atomicity property ensures that, 
+if a debit is made successfully from one account, the corresponding credit is made to the other account.
 
 Component of database responsible for it:
 - Recovery management component:
@@ -12,9 +14,10 @@ How does it do it?
 - Maintains log files till the commit statement is encountered.
 - After a commit statement, the log file is deleted.
 
-Consistency:
-- If the database was consistent before a particular transaction, then it should also be consistent after the
-execution of the transaction.
+Consistency
+- Data is in a consistent state when a transaction starts and when it ends.
+- For example, in an application that transfers funds from one account to another, the consistency property ensures that the total value 
+of funds in both the accounts is the same at the start and end of each transaction.
 
 Who is responsible for this?
 - It is user's/programmer's responsibility.
@@ -22,9 +25,11 @@ Who is responsible for this?
 How does he ensure it?
 - By setting various integrity constraints.
 
-Isoloation:
-- If 2 or more transactions are being executed concurrently, this should not cause any inconsistency.
-- It should be as if the transaction executed independent of other transaction.
+Isolation
+- The intermediate state of a transaction is invisible to other transactions. As a result, transactions that run concurrently appear to be 
+serialized.
+-For example, in an application that transfers funds from one account to another, the isolation property ensures that another transaction 
+sees the transferred funds in one account or the other, but not in both, nor in neither.
 
 T1          |             T2
 R(A)        |
@@ -36,10 +41,10 @@ W(A)        |
 R(B)        |
 W(B)        |
 
-Durability:
-- The effect of a completed or committed transaction should persist even after a system failure.
-- The changes of a successful transaction occurs even if the system failure occurs.
-- It means once a transaction commits, the system must guarantee that the results will never be lost.
+Durability
+After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
+For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made 
+to each account will not be reversed.
 
 How is it ensured?
 - By ensuring recoverability
@@ -54,4 +59,6 @@ Isolation	Concurrency Control Manager
 Durability	Recovery Manager
 
 
-Ref - https://www.geeksforgeeks.org/acid-properties-in-dbms/
+Reference:
+https://www.geeksforgeeks.org/acid-properties-in-dbms/
+https://www.ibm.com/docs/en/cics-ts/5.4?topic=processing-acid-properties-transactions/
