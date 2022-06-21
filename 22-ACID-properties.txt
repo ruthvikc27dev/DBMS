@@ -19,7 +19,7 @@ execution of the transaction.
 Who is responsible for this?
 - It is user's/programmer's responsibility.
 
-How does he do it?
+How does he ensure it?
 - By setting various integrity constraints.
 
 Isoloation:
@@ -37,10 +37,18 @@ R(B)        |
 W(B)        |
 
 Durability:
-- The effect of a completed or committed transaction should persist even after a crash.
+- The effect of a completed or committed transaction should persist even after a system failure.
+- The changes of a successful transaction occurs even if the system failure occurs.
 - It means once a transaction commits, the system must guarantee that the results will never be lost.
 
 How is it ensured?
 - By ensuring recoverability
 - Solution: using RAIN (Redundant Array of independent disks) to keep multiple copies of information at 
 various places in the database. (To ensure we have an alternative location to retrieve information, in case of a crash)
+
+
+Property	Responsibility for maintaining properties
+Atomicity	Transaction Manager
+Consistency	Application programmer
+Isolation	Concurrency Control Manager
+Durability	Recovery Manager
