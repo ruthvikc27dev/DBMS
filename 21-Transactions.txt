@@ -1,0 +1,14 @@
+
+What is transaction?
+Transaction is a collection of related read & write operations used to perform some related task.
+
+Example -
+R(A)           (Read from seconday memory and store it in main memory)
+A=A+500
+W(A)           (write to main memory, then to seconday memory)
+R(B)           (Read from seconday memory and store it in main memory)
+B=B-500
+W(B)           (write to main memory, then to seconday memory)
+COMMIT
+
+To ensure accurary, completeness & data integrity, database must follow ACID properties

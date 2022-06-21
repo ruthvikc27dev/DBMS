@@ -1,0 +1,46 @@
+ACID properties of transaction -
+
+Atomicity:
+-  Either all the operations of the transaction must executed or none.
+
+Component of database responsible for it:
+- Recovery management component:
+    - It takes care that either the atomicity is applied else rollback is done if any error arises
+    before the commit statement.
+
+How does it do it?
+- Maintains log files till the commit statement is encountered.
+- After a commit statement, the log file is deleted.
+
+Consistency:
+- If the database was consistent before a particular transaction, then it should also be consistent after the
+execution of the transaction.
+
+Who is responsible for this?
+- It is user's/programmer's responsibility.
+
+How does he do it?
+- By setting various integrity constraints.
+
+Isoloation:
+- If 2 or more transactions are being executed concurrently, this should not cause any inconsistency.
+- It should be as if the transaction executed independent of other transaction.
+
+T1          |             T2
+R(A)        |
+W(A)        |
+     (context switch T1->T2)
+            |           R(A)
+            |           R(B)
+     (context switch T2->T1)
+R(B)        |
+W(B)        |
+
+Durability:
+- The effect of a completed or committed transaction should persist even after a crash.
+- It means once a transaction commits, the system must guarantee that the results will never be lost.
+
+How is it ensured?
+- By ensuring recoverability
+- Solution: using RAIN (Redundant Array of independent disks) to keep multiple copies of information at 
+various places in the database. (To ensure we have an alternative location to retrieve information, in case of a crash)
