@@ -1,0 +1,23 @@
+
+Transaction states -
+
+At the beginning of the execution of the transaction, it goes to active state 
+
+
+            Case 1: Active  ->  Partially Committed  ->  Committed  ->  Terminated
+            Case 2: Active  ->  Failed  ->  Abort  ->  Terminated  (or)
+                    Active  ->  Partially Committed  ->  Failed  ->  Abort  ->  Terminated
+
+Case 1 -
+
+Active               -  Transaction is executing
+Partially Commit     -  Final statement of transaction is executed except the commit statement. The changes will now get updated in the main memory. 
+Commit               -  Transaction completes its execution successfully. The changes will now saved in seconday memory.
+Terminated           -  Transaction is finished and will release all the resources like CPU, RAM, Registers, N/W...
+
+Case 2 -
+
+Active               -  Transaction is executing
+Failed               -  Transaction fails to complete successfully.
+Abort                -  changes made by transaction are cancelled (roll back).
+Terminated           -  Transaction is finished and will release all the resources like CPU, RAM, Registers, N/W...
