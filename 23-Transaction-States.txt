@@ -18,6 +18,6 @@ Terminated           -  Transaction is finished and will release all the resourc
 Case 2 -
 
 Active               -  Transaction is executing
-Failed               -  Transaction fails to complete successfully.
+Failed               -  Transaction fails to complete successfully due to anything like power outrage, system failure, SQL error...
 Abort                -  changes made by transaction are cancelled (roll back).
 Terminated           -  Transaction is finished and will release all the resources like CPU, RAM, Registers, N/W...
